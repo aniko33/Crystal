@@ -1,4 +1,4 @@
-// #![windows_subsystem = "windows"] // No console display
+#![windows_subsystem = "windows"] // No console display, comment this for debug the application
 
 use reqwest::blocking::{multipart, Client};
 use walkdir::WalkDir;
