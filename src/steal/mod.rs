@@ -359,8 +359,6 @@ pub fn win32_crypt_unprotect_data(mut encrypted_key: Vec<u8>) -> Vec<u8> {
     }
 }
 
-// FIX:
-
 pub fn aes_decrypt(key: &[u8], data: Vec<u8>) -> Option<Vec<u8>> {
     if data.is_empty() {
         return None;
