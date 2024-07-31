@@ -9,8 +9,13 @@
 - Grab: Token Discord
 - Grab: Steam 
 - Grab: Riot
+- Data exfiltration via Discord
 
 # Usage
 ```
 python compile.py
 ```
+
+# Showcase
+![image](https://github.com/user-attachments/assets/5c9a236f-e9d1-4e3e-a918-d4b5157816f1)
+
