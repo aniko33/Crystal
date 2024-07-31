@@ -1,0 +1,38 @@
+[package]
+name = "scr"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.8.5"
+reqwest = { version = "0.11.18", features = ["json", "multipart", "blocking"] }
+serde_json = "1.0.83"
+sqlite = "0.27.0"
+aes-gcm = "0.10.1"
+tempdir = "0.3.7"
+regex = "1.9.1"
+base64 = "0.21.2"
+sysinfo = "0.29.8"
+zip = "0.6.6"
+walkdir = "2.4.0"
+winapi = { version = "0.3.9", features = ["wincrypt", "timezoneapi","dpapi", "debugapi", "processthreadsapi", "winnt", "winbase", "minwinbase", "winnls"] }
+winreg = "0.51.0"
+
+[build]
+target="x86_64-pc-windows-gnu"
+rustflags = ["-C", "prefer-dynamic"]
+
+[profile.release]
+opt-level = 'z'     # Optimize for size
+lto = true          # Enable link-time optimization
+codegen-units = 1   # Reduce number of codegen units to increase optimizations
+panic = 'abort'     # Abort on panic
+strip = true        # Strip symbols from binary*
+debug-assertions = false
+rpath = false
+
+[profile.dev]
+opt-level = "s"
+lto = true
